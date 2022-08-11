@@ -1,0 +1,227 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+:root
+{
+  --main-color: #85C443;
+  --background-color: #000000;
+  --text-color:white;
+  --sub-title-color: #5b5c5b;
+  --sub-title-fontsize: .5rem;
+  --width: 70%;
+
+}
+
+/*
+***** globle css ****
+*/
+
+ul
+{
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.icon{
+  width: 12px;
+  margin: 0 5px;
+}
+
+hr
+{
+  height: 70%;
+  background-color: var(--sub-title-color);
+}
+
+
+
+body
+{
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  font-family: 'Montserrat' ;
+}
+
+/*
+***** NavBar Css ******
+*/
+
+.nav-container
+{
+  width: 100%;
+  height: 80px;
+  background-color: var(--background-color);
+}
+
+.navbar
+{
+  height: 100%;
+  width: var(--width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #85C443; */
+  color: var(--text-color);
+  padding: 0 10px;
+}
+
+.logo img
+{
+  width: 150px;
+  aspect-ratio: 2;
+}
+
+
+/*
+**** Body ****
+*/
+
+.body
+{
+  width: var(--width);
+  color: var(--text-color);
+  height: calc(100vh - 80px);
+  background-color: var(--background-color);
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+/*
+**** Progress bar ****
+*/
+.title
+{
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+.title span
+{
+  text-decoration: underline;
+}
+
+.sub-title
+{
+  color: var(--sub-title-color);
+  /* font-size: var(--sub-title-fontsize); */
+  font-weight: 600;
+}
+.progress-container
+{
+  /* height: 30px; */
+}
+
+.steps
+{
+  width: 100%;
+  height: 30px;
+  display: block;
+}
+
+.steps ul
+{
+  /* font-size: .77rem;
+  padding: 10px 0px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.steps ul li
+{
+  /* font-size: .77rem;
+  padding: 10px 0px; */
+  align-items: center;
+  font-size: .7rem;
+  font-weight: 700;
+}
+
+.active
+{
+  color: var(--main-color);
+}
+
+
+/*
+******* Your Club **********
+*/
+
+.form-staps
+{
+  width: var(--width);
+  margin: 0 auto;
+}
+
+.search-container
+{
+  height: 80px;
+}
+
+.up-Section
+{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-items: center;
+  height: 50%;
+  background-color: var(--main-color);
+}
+
+/* .up-Section span
+{
+  text-align: center;
+}
+
+.up-Section span:nth-child(1)
+{
+  width: 40%;
+}
+
+
+.up-Section span:nth-child(2) input
+{
+  width: 90%;
+} */
+
+.down-Section
+{
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  height: 50%;
+  background-color: var(--sub-title-color);
+}
+
+.search_btn{
+  background-color: transparent;
+  border: none;
+  color: var(--background-color);
+  font-size: 1rem;
+  font-weight: 600;
+  
+}
+
+#search
+{
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+
+}
+
+.up-Section span:nth-child(2)
+{
+  width: 90%;
+}
+
+
+
+
