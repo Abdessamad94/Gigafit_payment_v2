@@ -1,60 +1,85 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-:root
-{
-  --main-color: #85C443;
+:root {
+  --main-color: #85c443;
   --background-color: #000000;
-  --text-color:white;
+  --second-background-color: #191919;
+  --text-color: white;
   --sub-title-color: #5b5c5b;
-  --sub-title-fontsize: .5rem;
+  --sub-title-fontsize: 0.6rem;
   --width: 70%;
-
 }
 
 /*
 ***** globle css ****
 */
 
-ul
-{
+ul {
   padding-left: 0;
   list-style-type: none;
 }
 
-.icon{
+.icon {
   width: 12px;
   margin: 0 5px;
 }
 
-hr
+.geoicon
 {
+  width: 17px;
+}
+
+.down-Section span:nth-child(3) ,.down-Section span:nth-child(1)
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.down-Section span:nth-child(3):hover
+{
+  cursor: pointer;
+}
+
+
+hr {
   height: 70%;
   background-color: var(--sub-title-color);
 }
 
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
 
-
-body
-{
+body {
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
-  font-family: 'Montserrat' ;
+  /* background-color: var(--second-background-color); */
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../src/assets/background.jpg");
+  font-family: "Montserrat";
 }
 
 /*
 ***** NavBar Css ******
 */
 
-.nav-container
-{
+.nav-container {
   width: 100%;
   height: 80px;
   background-color: var(--background-color);
 }
 
-.navbar
-{
+.navbar {
   height: 100%;
   width: var(--width);
   margin: 0 auto;
@@ -64,65 +89,62 @@ body
   /* background-color: #85C443; */
   color: var(--text-color);
   padding: 0 10px;
+  transition: all 2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
-.logo img
-{
+.stop {
+  overflow-y: hidden;
+  height: 100vh;
+}
+
+.logo img {
   width: 150px;
   aspect-ratio: 2;
 }
-
 
 /*
 **** Body ****
 */
 
-.body
-{
+.body {
   width: var(--width);
   color: var(--text-color);
-  height: calc(100vh - 80px);
-  background-color: var(--background-color);
   margin: 0 auto;
-  padding: 15px 0;
+  padding: 4% 0;
 }
 
 /*
 **** Progress bar ****
 */
-.title
-{
-  font-size: 1.2rem;
+.title {
+  font-size: 1.4rem;
   font-style: italic;
-  font-weight: bold;
+  font-weight:bolder;
   color: var(--main-color);
 }
 
-.title span
-{
+.title span {
   text-decoration: underline;
 }
 
-.sub-title
-{
-  color: var(--sub-title-color);
-  /* font-size: var(--sub-title-fontsize); */
+.sub-title {
+  color: white;
+  font-size: var(--sub-title-fontsize);
   font-weight: 600;
 }
-.progress-container
-{
-  /* height: 30px; */
-}
 
-.steps
+/* .progress-container
 {
+   height: 30px; 
+} */
+
+.steps {
   width: 100%;
   height: 30px;
   display: block;
 }
 
-.steps ul
-{
+.steps ul {
   /* font-size: .77rem;
   padding: 10px 0px; */
   display: flex;
@@ -131,38 +153,37 @@ body
   align-items: center;
 }
 
-.steps ul li
-{
+.steps ul li {
   /* font-size: .77rem;
   padding: 10px 0px; */
   align-items: center;
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: 700;
 }
 
-.active
-{
+.active {
   color: var(--main-color);
 }
-
 
 /*
 ******* Your Club **********
 */
 
-.form-staps
-{
+.form-staps {
   width: var(--width);
   margin: 0 auto;
 }
 
-.search-container
-{
+.search-container {
   height: 80px;
 }
 
-.up-Section
+.search-container
 {
+  margin: 10px 0px;
+}
+
+.up-Section {
   display: grid;
   justify-content: center;
   grid-template-columns: 1fr 2fr;
@@ -188,8 +209,7 @@ body
   width: 90%;
 } */
 
-.down-Section
-{
+.down-Section {
   display: grid;
   grid-template-columns: 3fr 1fr 3fr;
   justify-content: center;
@@ -199,17 +219,15 @@ body
   background-color: var(--sub-title-color);
 }
 
-.search_btn{
+.search_btn {
   background-color: transparent;
   border: none;
   color: var(--background-color);
   font-size: 1rem;
   font-weight: 600;
-  
 }
 
-#search
-{
+#search {
   width: 100%;
   background-color: transparent;
   border: none;
@@ -217,9 +235,146 @@ body
 
 }
 
-.up-Section span:nth-child(2)
-{
+#search:focus-visible {
+  outline: none;
+  /* border-bottom: 1px solid red;
+  margin-bottom: -1px; */
+}
+
+
+
+.up-Section span:nth-child(2) {
   width: 90%;
+}
+
+/*
+**** club card style ****
+*/
+
+.clubs-list {
+  width: 100%;
+  height: 500px;
+  padding: 8px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+
+.clubs-list::-webkit-scrollbar {
+ display: none;
+}
+
+
+/* .clubs-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 50px;
+}
+
+
+.clubs-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 50px;
+}
+
+
+.clubs-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  border-radius: 50px;
+}  */
+
+.club-card {
+  width: 95%;
+  margin: 0 auto;
+  height: 100%;
+  background-color: var(--background-color);
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  margin: 8px 0px;
+  border-radius: 5px;
+  box-shadow: 0px 0px var(--main-color);
+}
+
+.club-card:hover {
+  box-shadow: -5px 5px var(--main-color);
+  margin-left: 8px;
+}
+
+.club-card:hover .social-links {
+  color: white;
+}
+
+.club-card .info-section {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.club-card .info-section .img-club {
+  width: 100%;
+  height: 100%;
+}
+
+.info-club {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 8px;
+}
+
+.info {
+  display: block;
+  padding-top: 8px;
+}
+
+.social-links {
+  color: var(--main-color);
+}
+
+.img-club img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.adress,
+.phone {
+  font-size: 0.9rem;
+  font-family: "Montserrat";
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clubs-container .title {
+  margin: 10px 0px;
+}
+.clubs-container .sub-title {
+  margin: 10px 0px;
+}
+
+.actions button
+{
+  background-color: transparent;
+  border: none;
+  font-size: .8rem;
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+}
+
+.actions button::before
+{
+  content: '';
+  background-color: #85c443;
+  width: 50px;
+  height: 1px;
 }
 
 

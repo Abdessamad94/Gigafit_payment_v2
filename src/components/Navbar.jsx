@@ -1,7 +1,8 @@
-import React from 'react'
+import React ,{useState , useEffect} from 'react'
 import logo from '../assets/Logo-GF.png'
 
 export default function Navbar() {
+  
   return (
     <div className='nav-container'>
         <div className='navbar'>

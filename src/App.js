@@ -1,18 +1,15 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Progress from "./components/Progress";
-import Yourclub from "./pages/Yourclub";
+import Form from "./pages/Form";
+
 
 function App() {
+  
   return (
-    <div className="App">
+    <div className='App'>
       <Navbar />
-      <div className="body">
-        <Progress />
-        <div className="form-staps">
-        <Yourclub />
-        </div>
-      </div>
+      <Form/>
     </div>
   );
 }
