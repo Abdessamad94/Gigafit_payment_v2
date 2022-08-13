@@ -110,7 +110,7 @@ body {
   width: var(--width);
   color: var(--text-color);
   margin: 0 auto;
-  padding: 4% 0;
+  padding: 2% 0;
 }
 
 /*
@@ -172,6 +172,7 @@ body {
 .form-staps {
   width: var(--width);
   margin: 0 auto;
+  padding-top: 20px;
 }
 
 .search-container {
@@ -330,8 +331,8 @@ body {
   padding-top: 8px;
 }
 
-.social-links {
-  color: var(--main-color);
+.social-links span {
+  padding: 0px 2px;
 }
 
 .img-club img {
@@ -367,6 +368,7 @@ body {
   font-weight: bold;
   font-style: italic;
   color: white;
+  cursor: pointer;
 }
 
 .actions button::before

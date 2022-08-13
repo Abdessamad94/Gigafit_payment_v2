@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import filtericon from "../assets/filter_icon.png";
 import geoicon from "../assets/geo_icon.png";
 
-export default function Search() {
+export default function Search({searchquery,setSearchquery}) {
 
     /* get goelocazation */
     const getGeo = () => {
@@ -22,7 +22,7 @@ export default function Search() {
           </button>
         </span>
         <span>
-          <input type="text" name="search" id="search" />
+          <input type="text" name="search" id="search" onChange={(event) => { setSearchquery(event.target.value) }} />
         </span>
       </div>
       <div className="down-Section">
