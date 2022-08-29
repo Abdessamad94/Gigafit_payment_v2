@@ -1,18 +1,30 @@
-import React from "react";
+import React ,{useState} from "react";
 import { FaSearch } from "react-icons/fa";
 import filtericon from "../assets/filter_icon.png";
 import geoicon from "../assets/geo_icon.png";
+import Geocode from "react-geocode";
 
-export default function Search({searchquery,setSearchquery}) {
+export default function Search({ searchquery, setSearchquery ,clubCount}) {
+  const [address, setAddress] = useState('')
+  /* get goelocazation */
+  const getGeo = () => {
+    Geocode.setApiKey("AIzaSyDLoZhIQWU4bnGtn0TCoqfy2y3xpMK8tTc");
+    navigator.geolocation.getCurrentPosition(function (position) {
+      Geocode.fromLatLng(position.coords.latitude, position.coords.longitude).then(
+        (response) => {
+          const address = response.results[7].formatted_address;
+          setAddress(address)
+          console.log(address);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    });
+  };
 
-    /* get goelocazation */
-    const getGeo = () => {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            // console.log("Latitude is :", position.coords.latitude);
-            // console.log("Longitude is :", position.coords.longitude);
-            console.log(position);
-          });
-    }
+
+
   return (
     <div className="search-container">
       <div className="up-Section">
@@ -22,18 +34,30 @@ export default function Search({searchquery,setSearchquery}) {
           </button>
         </span>
         <span>
-          <input type="text" name="search" id="search" onChange={(event) => { setSearchquery(event.target.value) }} />
+          <input
+            type="text"
+            name="search"
+            id="search"
+            onChange={(event) => {
+              setSearchquery(event.target.value);
+            }}
+            placeholder='...'
+          />
         </span>
       </div>
       <div className="down-Section">
         <span>
           <img className="icon" src={filtericon} alt="filter icon" />
-          <small>58 CLUB PRES DE "PARIS"</small>
+          <small>{`${clubCount}`} CLUBS</small>
         </span>
         <hr />
-        <span onClick={() => {getGeo()}}>
+        <span
+          onClick={() => {
+            getGeo();
+          }}
+        >
           <img className="icon geoicon" src={geoicon} alt="filter icon" />
-          <small>58 CLUB PRES DE "PARIS"</small>
+          <small>{address ? address : "Click pour votre position"}  </small>
         </span>
       </div>
     </div>

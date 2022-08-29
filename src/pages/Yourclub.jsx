@@ -39,7 +39,7 @@ export default function Yourclub() {
       <span className="sub-title">
         RECHERCHE LE CLUB LE PLUS PROCHE DE CHEZ TOI :
       </span>
-      <Search searchquery={searchquery} setSearchquery={setSearchquery} />
+      <Search searchquery={searchquery} setSearchquery={setSearchquery} clubCount={clubs.length}/>
       <div className="clubs-list">
         {clubs
           .filter((club) => club.name.toLowerCase().includes(searchquery))
