@@ -8,7 +8,8 @@ export default function Search({ searchquery, setSearchquery ,clubCount}) {
   const [address, setAddress] = useState('')
   /* get goelocazation */
   const getGeo = () => {
-    Geocode.setApiKey("AIzaSyDLoZhIQWU4bnGtn0TCoqfy2y3xpMK8tTc");
+    
+    Geocode.setApiKey(process.env.REACT_APP_Google_API);
     navigator.geolocation.getCurrentPosition(function (position) {
       Geocode.fromLatLng(position.coords.latitude, position.coords.longitude).then(
         (response) => {

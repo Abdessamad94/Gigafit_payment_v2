@@ -16,7 +16,7 @@ export default function Yourclub() {
       const res = await axios.get(`${process.env.React_APP_HEROKO_API}`, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJfaWQiOiI2MjQ2YWU2OGEyNWY4YTU1N2RhOTY1ZmUiLCJsYXN0bmFtZSI6InRlc3QiLCJmaXJzdG5hbWUiOiJ0ZXN0ICIsImdlbmRlciI6Ik1hbGUiLCJkYXRlQmlydGgiOiIyMDE3LTA1LTExIiwiZW1haWwiOiJ0ZXN0QGdtYWlsLmNvbSIsInRlbCI6IjIwMjIyNTU0NTc4IiwicGFzc3dvcmQiOiIkMmIkMTAkV3gzN0V2V3I1VmxacmUveWRnWC5DTzBLcnUuUEhWd29yaGlnb2IydTR5NnhtVjRqelcyVWEiLCJwcm9maWxlUGljdHVyZSI6IjE2NDg3OTkzMzU1MjkxLmpwZWciLCJjbHViIjoiNjIxOTBjZjNkYzc5YjI5YmY3OGIyN2VhIiwiY3JlYXRlZEF0IjoiMjAyMi0wNC0wMVQwNzo0ODo1Ni4zNjhaIiwidXBkYXRlZEF0IjoiMjAyMi0wNC0wMVQwNzo0ODo1Ni4zNjhaIn0sImlhdCI6MTY1MDM2MjMwNn0.0jwSSlW9ALtTtSs4wp-dlmvuJyyt8A2iC1brjSa7LSY`,
+          Authorization: `Bearer ${process.env.REACT_APP_Jwt_Token}`,
         },
       });
       setClubs(res.data);
